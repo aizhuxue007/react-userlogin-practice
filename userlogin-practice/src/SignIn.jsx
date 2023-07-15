@@ -97,6 +97,7 @@ const SignIn = () => {
                   Login
                 </button>
               </div>
+              <p className="text-yellow-200 my-5">Demo email: aizhu@gmail.com, pwd: hotdog123</p>
             </div>
           </form>
         </>
