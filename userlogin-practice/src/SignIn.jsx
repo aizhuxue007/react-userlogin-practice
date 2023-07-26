@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { supabase } from "./main";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -15,10 +16,24 @@ const SignIn = () => {
     handleLogin()
   };
 
-  const handleLogin = () => {
-    consoleLogin()
+  const handleLogin = async () => {
     resetLoginForm()
-    authenticateLogin()
+    try {
+      const response = await fetch('/api/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      
+      if (!response.ok) {
+        const { error } = await response.json();
+        throw new Error(error.message)
+      }
+    } catch (error) {
+      console.error('sign-in failed', error.message)
+    }
   }
 
   const consoleLogin = () => {
@@ -52,7 +67,8 @@ const SignIn = () => {
         <>
           <h1 className="text-white text-2xl font-serif">Sign In</h1>
           {errMsg && <><p className="my-5 text-yellow-200">{errMsg}</p></>}
-          <form className="mt-5 flex justify-center" onSubmit={submitLogin}>
+          <form className="mt-5 flex justify-center" 
+            onSubmit={submitLogin}>
             <div className="w-full h-full flex-col justify-between">
               <div className="input-container">
                 <div className="email-input w-full mb-5 flex justify-center items-center">

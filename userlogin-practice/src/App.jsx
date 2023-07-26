@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import "./App.css";
 
 
+
 function App() {
   const demoEmail = 'aizhu@gmail.com'
   const demoPwd = 'hotdog123'
@@ -12,8 +13,7 @@ function App() {
   }
 
   useEffect(() => {
-    localStorage.setItem('email', user.email)
-    localStorage.setItem('pwd', user.pwd)
+
   }, [])
 
   return (
