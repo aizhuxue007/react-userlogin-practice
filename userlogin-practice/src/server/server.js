@@ -4,7 +4,7 @@ const cors = require('cors');
 const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
-const PORT = 4000; // Set your desired port number
+const PORT = 3000; // Set your desired port number
 
 // Middleware
 app.use(bodyParser.json());

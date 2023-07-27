@@ -2,8 +2,6 @@ import SignIn from "./SignIn";
 import { useEffect } from "react";
 import "./App.css";
 
-
-
 function App() {
   const demoEmail = 'aizhu@gmail.com'
   const demoPwd = 'hotdog123'
@@ -13,8 +11,12 @@ function App() {
   }
 
   useEffect(() => {
-
+    logInViaServer()
   }, [])
+
+  const logInViaServer = async () => {
+    
+  }
 
   return (
     <>
