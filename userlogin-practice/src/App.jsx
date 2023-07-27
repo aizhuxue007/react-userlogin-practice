@@ -1,21 +1,15 @@
 import SignIn from "./SignIn";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const demoEmail = 'aizhu@gmail.com'
-  const demoPwd = 'hotdog123'
-  const user = {
-    email: demoEmail,
-    pwd: demoPwd
-  }
 
   useEffect(() => {
     logInViaServer()
   }, [])
 
   const logInViaServer = async () => {
-    
+
   }
 
   return (
