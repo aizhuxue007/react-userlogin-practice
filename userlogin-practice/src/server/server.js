@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Initialize Supabase client
-const supabaseUrl = ;
-const supabaseKey = ;
+const supabaseUrl = "url";
+const supabaseKey = "password";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Endpoint for user sign-in
